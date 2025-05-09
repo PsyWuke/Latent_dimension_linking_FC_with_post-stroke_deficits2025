@@ -65,8 +65,8 @@ BehavName = T.Properties.VariableNames;
 confounds = {'age' 'gender'  'ethnicity' 'smoke' };
 regressors=SubInfo{:,confounds};
 % Regress out confounds
-[X_reg, ~, ~, ~] = WK_CBIG_glm_regress_matrix(X, regressors, 0, []);
-[Y_reg, ~, ~, ~] = WK_CBIG_glm_regress_matrix(Y, regressors, 0, []);
+[X_reg, ~, ~, ~] = glm_regress_matrix(X, regressors, 0, []);
+[Y_reg, ~, ~, ~] = glm_regress_matrix(Y, regressors, 0, []);
 
 %% run PLS
 disp('Running PLS');
