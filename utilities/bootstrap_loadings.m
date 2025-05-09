@@ -1,4 +1,4 @@
-function [LC_RSFC_loadings_boot,LC_behav_loadings_boot,all_boot_orders] = CBIG_VK2019_bootstrap_loadings...
+function [LC_RSFC_loadings_boot,LC_behav_loadings_boot,all_boot_orders] = bootstrap_loadings...
     (X,Y,U,signif_LC,nBootstraps,grouping,normalization_img,normalization_behav,seed)
 % 
 % This function computes bootstrap resampling with replacement on X and Y, 
@@ -33,6 +33,7 @@ function [LC_RSFC_loadings_boot,LC_behav_loadings_boot,all_boot_orders] = CBIG_V
 % - all_boot_orders          : N x P, subject index in all bootstrap samples
 %
 % Written by Valeria Kebets & CBIG under MIT license: https://github.com/ThomasYeoLab/CBIG/blob/master/LICENSE.md
+% Revised by Ke Wu
 
 
 % Set random number generator 
@@ -48,8 +49,6 @@ if(size(X,1) ~= size(Y,1))
 end
 
 nSubj = size(X,1);
-groupIDs = unique(grouping);
-nGroups = length(groupIDs);
 subj_grouping = ones(nSubj,1);
 
 % Get bootstrap subject sampling
