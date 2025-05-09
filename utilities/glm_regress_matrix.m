@@ -1,7 +1,4 @@
-function [resid_mtx, coef_mtx, std_mtx, retrend_mtx] = CBIG_glm_regress_matrix(input_mtx, regressor, polynomial_fit, censor)
-
-% [resid_mtx, coef_mtx, std_mtx, retrend_mtx] = CBIG_glm_regress_matrix(input_mtx, regressor, polynomial_fit, censor)
-% 
+function [resid_mtx, coef_mtx, std_mtx, retrend_mtx] = glm_regress_matrix(input_mtx, regressor, polynomial_fit, censor)
 % This function does GLM regression for each column of a MxN input matrix 
 % (input_mtx) independently with a MxK regressor matrix (regressor). If
 % polynomial_fit is set to -1, we add nothing to the regressor matrix. If 
