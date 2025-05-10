@@ -62,7 +62,7 @@ Y = [T_atten,T_lan,T_mot,T_mem];
 BehavName = T.Properties.VariableNames;
 
 %% regression
-confounds = {'age' 'gender'  'ethnicity' 'smoke' };
+confounds = {'age' 'gender'  'ethnicity' 'smoke' 'lesion_type'};
 regressors=SubInfo{:,confounds};
 % Regress out confounds
 [X_reg, ~, ~, ~] = glm_regress_matrix(X, regressors, 0, []);
